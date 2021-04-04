@@ -1,0 +1,16 @@
+
+acl docker_network src 172.16.0.0/12 
+http_access allow docker_network 
+http_port 3128
+
+cache_peer ${PROXY_HOST} parent ${PROXY_PORT} 0 no-query no-digest
+
+# access to internal network
+acl local-servers dst 10.1.1.0/8
+acl local-servers dst 172.16.0.0/12
+acl local-servers dst 192.168.0.0/16 
+
+never_direct deny local-servers
+
+# access to the internet inside vpn network
+never_direct allow docker_network
