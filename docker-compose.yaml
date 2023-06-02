@@ -1,8 +1,7 @@
 version: "3.9"
 services:
   vpn-wsl2-proxy:
-    build:
-      context: .
+    image: landrunner1/vpn-wsl2-proxy:latest
     environment: 
       - PROXY_HOST=your_company_proxy_host # change it to your company proxy.
       - PROXY_PORT=8080 # change it to your proxy port.

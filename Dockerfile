@@ -1,7 +1,6 @@
-FROM ubuntu:20.04
+FROM debian:bullseye-slim
 
 RUN apt-get update \
-#    && apt-get install -y squid
     && DEBIAN_FRONTEND=noninteractive apt-get install -y squid
 
 COPY squid.conf /etc/squid/

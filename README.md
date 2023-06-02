@@ -1,10 +1,5 @@
 # Proxy Server for WSL2 on Docker desktop for Windows when using VPN
-### Biulding image
-Run docker-compose build from your powershell console.
-```
-> docker-compose build
-```
-### Running
+### How to use 
 * Set your companies proxy setting to docker-compse.yaml.
 ```
     environment: 
